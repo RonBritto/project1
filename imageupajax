@@ -1,0 +1,18 @@
+$("form[name='uploader']").submit(function(e) {
+        var formData = new FormData($(this)[0]);
+
+        $.ajax({
+            url: "page.php",
+            type: "POST",
+            data: formData,
+            async: false,
+            success: function (msg) {
+                alert(msg)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        e.preventDefault();
+    });
